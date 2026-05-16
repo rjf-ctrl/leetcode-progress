@@ -1,0 +1,9 @@
+# Compiled executables
+a.out
+*.out
+
+# Object files
+*.o
+
+# Linux binaries
+main

@@ -1,12 +1,28 @@
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 using namespace std;
 
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        // Your logic here
-        return 0;
+        
+        unordered_set<int> s;
+        for (int i: nums) s.insert(i);
+
+        int count = 0;
+        int max = 0;
+
+        for (int i: s) {
+            count = 0;
+            if (!s.count(i-1)){
+                count=1;
+                while(s.count(i+count)) count++;
+            }
+            max = (count>max)? count: max;
+        }
+
+        return max;
     }
 };
 
@@ -20,7 +36,7 @@ int main() {
     // Test Case 1
     vector<int> nums1 = {100, 4, 200, 1, 3, 2};
     cout << "Test Case 1 Output: "
-         << sol.longestConsecutive(nums1) << endl;
+         << sol.longestConsecutive(nums1)  << endl;
     // Expected: 4  (sequence: 1,2,3,4)
 
     // Test Case 2
