@@ -1,4 +1,4 @@
-#128.Longest Consecutive Sequence
+# 128.Longest Consecutive Sequence
 
 Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
 
@@ -22,14 +22,14 @@ Input: nums = [1,0,1,2]
 Output: 3
 '''
 
-*-------------------------------------------------------------------------*
+**-------------------------------------------------------------------------**
 
-##SOLN1
+## SOLN1
 best soln
 use unordered set
 note: loop over the unordered set s, not nums so as to avoid hitting duplicates, it will improve time
 
-##SOLN2
+## SOLN2
 much slower
 use union find + unordered map and unordered set
 connect (or union) consecutive nodes keep track of connected component size (union Not by rank but by size) largest connected component is longest consecutive sequence
