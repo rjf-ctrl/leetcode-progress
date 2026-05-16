@@ -75,3 +75,81 @@ public:
 };
 
 '''
+
+
+# LEVEL ORDER TRAVERSAL
+### with queue
+
+### version 1
+'''
+ #include <queue>
+ struct qNode {
+    TreeNode *x;
+    int level;
+ };
+
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> result;
+        if(!root) return result;
+
+        queue<qNode> q;
+        q.push({root, 0});
+
+        while(!q.empty()){
+        
+            qNode current = q.front();
+            q.pop();
+
+            if(current.level == result.size()){
+                result.push_back({});
+            }
+
+            result[current.level].push_back(current.x->val);
+
+            if(current.x->left)  q.push({current.x->left, current.level+1});
+            if(current.x->right )q.push({current.x->right, current.level+1});
+            
+        }
+
+        return result;
+    }
+};
+'''
+
+
+### version 2 : standard
+'''
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> result;
+
+        if (!root) return result;
+
+        queue<TreeNode*> q;
+        q.push(root);
+
+        while (!q.empty()) {
+            
+            int size = q.size();
+            vector<int> level;
+
+            for (int i = 0; i < size; i++) {
+                TreeNode* node = q.front();
+                q.pop();
+
+                level.push_back(node->val);
+
+                if (node->left) q.push(node->left);
+                if (node->right) q.push(node->right);
+            }
+
+            result.push_back(level);
+        }
+
+        return result;
+    }
+};
+'''
