@@ -6,3 +6,4 @@ Detremine if give tree is height balanced (heigh of letf subtree and right subtr
 ## SOLN 
 
  use the height function and basic recursion. null node is balanced
+  
