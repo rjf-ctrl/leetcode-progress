@@ -23,6 +23,3 @@ Output: 3
 ---
 
 ## SOLN
-
-Same as house robber one to avoid adjacent first and last houses, run houserobber on nums[0:n-1] and nums[1:n] seperately adn selct the max of the two.
-
