@@ -1,6 +1,6 @@
 # 0-1 Knapsack
 
-A knapsack has a max capacity on weight. Different objects with weights and an associated profut
+A knapsack has a max capacity on weight. Different objects with weights and an associated value
 Problem: maximise profit and restrict yourself to the weight limit.
 
 ```
