@@ -137,10 +137,10 @@ return prev[m];
 Space:
 O(m)
 
-PRINTING THE LCS
+## PRINTING THE LCS
 
 After filling dp:
-
+```
 i=n
 j=m
 
@@ -167,6 +167,7 @@ while(i>0 && j>0){
 
 reverse(answer.begin(),
         answer.end());
+```
 
 LCS PATTERN CHEAT SHEET
 
